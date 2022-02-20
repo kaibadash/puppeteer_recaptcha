@@ -6,6 +6,7 @@ const puppeteer = require('puppeteer');
   await page.goto('https://pokosho.com/a/recaptcha/',
     {'timeout': 10000, 'waitUntil':'load'}
   );
+  await page.waitForTimeout(1000); 
   await page.click('#submit');
   const json = await page.content();
   console.log(json);
